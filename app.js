@@ -1,6 +1,8 @@
 import { LiquidGlass } from "https://cdn.jsdelivr.net/npm/@ybouane/liquidglass/dist/index.js";
 
 const root = document.querySelector("#root");
+// Let the renderer's optical shadow extend beyond the glass surfaces.
+root.style.overflow = "visible";
 const glassElements = [...root.querySelectorAll("[data-glass]")];
 
 const base = {
