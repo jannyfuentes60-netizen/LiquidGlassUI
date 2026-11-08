@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#d9e9f2">
+  <meta name="description" content="LiquidGlassUI — laboratorio de superficies de vidrio con refracción WebGL para la web.">
+  <title>LiquidGlassUI — Real glass for the web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main id="root" class="stage">
+    <div class="scene scene-sky" aria-hidden="true"></div>
+    <div class="scene scene-orb orb-one" aria-hidden="true"></div>
+    <div class="scene scene-orb orb-two" aria-hidden="true"></div>
+    <div class="scene scene-horizon" aria-hidden="true"></div>
+    <div class="scene scene-glow" aria-hidden="true"></div>
+
+    <header class="topbar glass" data-glass="nav">
+      <a class="brand" href="#" aria-label="LiquidGlassUI inicio">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span>LiquidGlass<span class="brand-light">UI</span></span>
+      </a>
+      <div class="topbar-right">
+        <span class="live-dot"></span>
+        <span class="topbar-label">OPTICAL MATERIAL LAB</span>
+        <a class="github-link" href="https://github.com/jannyfuentes60-netizen/LiquidGlassUI" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+      </div>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow"><span class="eyebrow-line"></span> A NEW KIND OF SURFACE</p>
+      <h1>Not a blur.<br><span>Something you can feel.</span></h1>
+      <p class="intro-copy">Una exploración de vidrio digital: luz, profundidad y refracción en tiempo real. No es una capa blanca con desenfoque; es una lente que transforma lo que hay detrás.</p>
+      <div class="intro-meta"><span>WEBGL OPTICS</span><i></i><span>REAL-TIME REFRACTION</span><i></i><span>ADAPTIVE MATERIAL</span></div>
+    </section>
+
+    <section class="feature-card glass" data-glass="feature" aria-label="Panel de material de vidrio">
+      <div class="feature-top">
+        <div><p class="card-kicker">MATERIAL STUDY / 001</p><h2>Pure clarity</h2></div>
+        <span class="status-pill"><span></span> LIVE MATERIAL</span>
+      </div>
+      <div class="feature-art" aria-hidden="true">
+        <div class="art-ring ring-a"></div><div class="art-ring ring-b"></div><div class="art-core"></div><div class="art-glint"></div>
+        <span class="art-caption caption-left">LIGHT / 01</span><span class="art-caption caption-right">IOR 1.33</span>
+      </div>
+      <div class="feature-bottom">
+        <div><span class="metric-label">REFRACTION</span><strong id="refraction-value">0.72</strong></div>
+        <div><span class="metric-label">CHROMATIC SHIFT</span><strong>SUBTLE</strong></div>
+        <div><span class="metric-label">RENDERER</span><strong>WEBGL</strong></div>
+      </div>
+    </section>
+
+    <section class="side-card glass" data-glass="side" aria-label="Propiedades del material">
+      <div class="side-heading"><div><p class="card-kicker">OPTICAL PROPERTIES</p><h2>Glass, in detail.</h2></div><span class="index-number">02</span></div>
+      <div class="property-list">
+        <div class="property"><span class="property-icon">◉</span><div><strong>Refraction</strong><small>La imagen se curva a través de la superficie.</small></div><span class="property-value">ON</span></div>
+        <div class="property"><span class="property-icon">✧</span><div><strong>Specular light</strong><small>Destellos y reflejos sobre los bordes.</small></div><span class="property-value">ON</span></div>
+        <div class="property"><span class="property-icon">◌</span><div><strong>Fresnel rim</strong><small>La luz aumenta en los ángulos rasantes.</small></div><span class="property-value">ON</span></div>
+      </div>
+      <div class="side-foot"><span>PHYSICAL-INSPIRED SHADING</span><span>01 — 03</span></div>
+    </section>
+
+    <section class="control-card glass" data-glass="controls" aria-label="Controles de vidrio">
+      <div class="control-heading"><div><p class="card-kicker">LIVE PLAYGROUND</p><h2>Shape the light.</h2></div><span class="control-icon">⌁</span></div>
+      <label class="range-row" for="refraction"><span>Refracción</span><output id="refraction-output">0.72</output></label>
+      <input id="refraction" type="range" min="0.05" max="1.4" value="0.72" step="0.01">
+      <label class="range-row" for="blur"><span>Suavidad</span><output id="blur-output">0.08</output></label>
+      <input id="blur" type="range" min="0" max="0.6" value="0.08" step="0.01">
+      <label class="range-row" for="light"><span>Reflejos</span><output id="light-output">0.55</output></label>
+      <input id="light" type="range" min="0" max="1" value="0.55" step="0.01">
+      <div class="control-actions"><button id="reset" class="reset-button" type="button">Restablecer</button><span class="gpu-state"><span></span> GPU READY</span></div>
+    </section>
+
+    <footer class="footer">
+      <span>LIQUIDGLASSUI <span class="footer-muted">/ EXPERIMENTAL MATERIAL SYSTEM</span></span>
+      <span>MADE FOR THE OPEN WEB <span class="footer-muted">© 2026</span></span>
+    </footer>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
